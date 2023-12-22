@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+Kristi is a web digital platform for christian games
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Game 1 - Verses {Match a quote to a verse [v2: match vice-versa]}
+Game 2 - Heroes {Match a heroic story to a character of the bible[v2: complete a heroic story]}
+Game 3 - Quotes {Match a quote to bible character {v2: complete the quote}}
+Game 4 - Jesus {Match Jesus' activity to one of his scenerios(healing, preaching, miracle) in the bible [v2: who or which other group of people were with him]}
+Game 5 - The Church {Identify the church a messsage was directed to && [v2: ]}
+Game 6 - Prophets {Match the prophet to the biblical message or prophecy [v2: ]}
+Game 7 - Kings {Match the king to the action(atrosity, action, rigth-deeds), [v2: ]}
+Game 8 - Apostles {Match the apostle to the Message. [v2: ]}
+Game 9 - The Books {Match the book to the author }
 
-## Available Scripts
+v2: Game 10 - Battles* {Identify the winner of a biblical battle story [v2: identify the kings and the cause of the battle]}
 
-In the project directory, you can run:
+The use of 'v2' refers to potential ideas for an upgraded version.
 
-### `npm start`
+Getting started
+npm install
+npm start
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+open localhost:3000 in a browser
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Progress[
+    -Installed bootstrap and looking to activate its effect
+    -Creating a new Header
+]
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Tools to use{
+    -Cards
+    -Carousel
+    -Collapse
+    -Dropdown
+    -Modal
+    -Change to navbar
+    -Offcanvas
+    -Popover
+    -Progress
+    -*Spinners
+    -Tooltip
+}
