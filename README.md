@@ -1,4 +1,4 @@
-Kristi is a web digital platform for christian games
+Christi is a web digital platform for christian games
 
 Game 1 - Verses {Match a quote to a verse [v2: match vice-versa]}
 Game 2 - Heroes {Match a heroic story to a character of the bible[v2: complete a heroic story]}
