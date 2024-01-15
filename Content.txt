@@ -1,0 +1,7 @@
+-> Heroes (Match a heroic story to a character of the bible) {
+
+    story 1 - David and Goliath {He fought Goliath with a sling and five smooth stones, the weapons of a shepherd boy. He wins, and Goliath is slain}
+    Hero -> David
+
+    story 2 - 
+}
