@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const Header = () => {
     return(
 
-        <div class="container row mt-3 nav-fill">
+        <div class="container row mt-3 nav-fill mx-auto">
             <div class="col-2 text-center">
                 <Link to='/' >
                     <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#e85a4f" class="bi bi-shield-plus d-none d-xs-none d-sm-inline" viewBox="0 0 16 16">

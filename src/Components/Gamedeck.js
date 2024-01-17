@@ -1,8 +1,11 @@
 const Gamedeck = () => {
     return(
 
+        // Question deck
         <div className="container border border-secondary rounded mt-2" style={{width:'70%'}}>
-            <div class='vstack'>
+            <div class='row'>
+            {/* Question Card */}
+            <div class='col-md-8'>
             <div class="card mb-3 mt-2" style={{maxWidth: '700px'}}>
                 <div class="row g-0">
                     <div class="col-md-7">
@@ -17,18 +20,25 @@ const Gamedeck = () => {
                     </div>
                 </div>
             </div>
+            </div>
 
-            <div class='d-flex justify-content-center justify-content-md-end mb-3'>
-            <div class="card text-center align-self-end">
-                <div class="card-header">
-                    Timer
+            {/* Response elements */}
+            <div class='col-md-4'>
+            <div class='d-flex mb-3 justify-content-center align-items-center vstack ms-5'>
+                {/* Timer */}
+                <div class="card text-center mt-2" style={{maxWidth:'150px'}}>
+                    <div class="card-header">
+                        Timer
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">30s</h5>
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                        Points to get
+                    </div>
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title">30s</h5>
-                </div>
-                <div class="card-footer text-body-secondary">
-                    Points to get
-                </div>
+                {/* Answer */}
+                <span class='d-flex align-items-center mx-1 mt-2'><button type="button" class="btn btn-primary btn-lg">Answer</button></span>
             </div>
             </div>
             </div>
