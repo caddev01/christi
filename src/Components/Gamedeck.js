@@ -2,7 +2,7 @@ const Gamedeck = () => {
     return(
 
         // Question deck
-        <div className="container border border-secondary rounded mt-2 h-100 mb-5" style={{width:'70%'}}>
+        <div className="container border border-secondary rounded mt-2 h-100 mb-5 vertical-center" style={{width:'70%'}}>
             <div className='row'>
             {/* Question Card */}
             <div className='col-md-8'>

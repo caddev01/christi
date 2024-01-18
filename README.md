@@ -24,7 +24,7 @@ Progress[
     -Installed bootstrap and looking to activate its effect
     -Creating a new Header
     - Trying to center the Gamedeck feauture vertically
-    - create the answer options with offcanvas and carousel
+    - create the answer options with offcanvas and carousel{currently trying to figure out how to use the vertical-align class to vertically center the Gamedeck element}
 ]
 
 Tools to use{
