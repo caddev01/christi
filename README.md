@@ -23,6 +23,8 @@ open localhost:3000 in a browser
 Progress[
     -Installed bootstrap and looking to activate its effect
     -Creating a new Header
+    - Trying to center the Gamedeck feauture vertically
+    - create the answer options with offcanvas and carousel
 ]
 
 Tools to use{

@@ -13,9 +13,9 @@ function Home() {
   return (
     <div>
       <Header />
-      <div class="row">
-        <div class="col-lg-8"><Jumbotron /></div>
-        <div class="col-lg-4"><Gamecard /></div>
+      <div className="row">
+        <div className="col-lg-8"><Jumbotron /></div>
+        <div className="col-lg-4"><Gamecard /></div>
       </div>
       <Optioncards />
       <Footer />
