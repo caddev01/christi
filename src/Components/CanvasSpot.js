@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
-function OfftheCanvas() {
+function OffCanvasExample({ name, ...props }) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -10,11 +10,11 @@ function OfftheCanvas() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        Launch
+        <div className='text-center'>
+        <Button variant="primary" onClick={handleShow} className="me-2">
+        {name}
       </Button>
-
-      <Offcanvas show={show} onHide={handleClose}>
+      <Offcanvas show={show} onHide={handleClose} {...props}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Offcanvas</Offcanvas.Title>
         </Offcanvas.Header>
@@ -23,8 +23,21 @@ function OfftheCanvas() {
           have chosen. Like, text, images, lists, etc.
         </Offcanvas.Body>
       </Offcanvas>
+        </div>
     </>
   );
 }
 
-export default OfftheCanvas;
+function Example() {
+  return (
+    <>
+      {['start', 'end', 'top', 'bottom'].map((placement, idx) => (
+        <OffCanvasExample key={idx} placement={placement} name={placement} />
+      ))}
+    </>
+  );
+}
+
+// render(<Example />);
+
+export default OffCanvasExample;

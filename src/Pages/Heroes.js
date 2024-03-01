@@ -4,6 +4,7 @@ import IntroJumbo from "../Components/IntroJumbo";
 import Gamedeck from "../Components/Gamedeck";
 import Footer2 from "../Components/Footer2";
 import Offcanvas from "../Components/Offcanvas";
+import CanvasSpot from "../Components/CanvasSpot";
 
 export default function Heroes () {
     return(
@@ -12,6 +13,7 @@ export default function Heroes () {
             {/* <IntroJumbo /> */}
             <Gamedeck />
             {/* <Offcanvas /> */}
+            <CanvasSpot />
             <Footer2 />
         </div>
     );
