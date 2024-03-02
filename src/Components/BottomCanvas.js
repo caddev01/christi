@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import AnswersCarousel from './AnswersCarousel';
 
-function OfftheCanvas() {
+function BottomCanvas() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -11,20 +12,19 @@ function OfftheCanvas() {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Launch
+        Attempt
       </Button>
 
-      <Offcanvas show={show} onHide={handleClose}>
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+      <Offcanvas show={show} onHide={handleClose} placement='bottom'>
+        <Offcanvas.Header className='mx-auto' closeButton>
+          <Offcanvas.Title>Pick your Answer</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          Some text as placeholder. In real life you can have the elements you
-          have chosen. Like, text, images, lists, etc.
+          <AnswersCarousel />
         </Offcanvas.Body>
       </Offcanvas>
     </>
   );
 }
 
-export default OfftheCanvas;
+export default BottomCanvas;

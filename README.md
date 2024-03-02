@@ -40,3 +40,10 @@ Tools to use{
     -*Spinners
     -Tooltip
 }
+
+Scope{
+    Frontend
+    Backend
+    Hosting
+    CyberSecurity
+}

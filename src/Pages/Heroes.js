@@ -3,7 +3,7 @@ import Footer from "../Components/Footer";
 import IntroJumbo from "../Components/IntroJumbo";
 import Gamedeck from "../Components/Gamedeck";
 import Footer2 from "../Components/Footer2";
-import Offcanvas from "../Components/Offcanvas";
+import BottomCanvas from "../Components/BottomCanvas";
 import CanvasSpot from "../Components/CanvasSpot";
 
 export default function Heroes () {
@@ -12,8 +12,8 @@ export default function Heroes () {
             <Header />
             {/* <IntroJumbo /> */}
             <Gamedeck />
-            {/* <Offcanvas /> */}
-            <CanvasSpot />
+            {/* <BottomCanvas /> */}
+            {/* <CanvasSpot /> */}
             <Footer2 />
         </div>
     );
