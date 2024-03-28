@@ -28,7 +28,7 @@ function AnswersCarousel() {
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
+      <Carousel.Item interval={2000}>
         {/* <ExampleCarouselImage text="Third slide" /> */}
         <img 
             className='d-block w-5 h-5 mx-auto'

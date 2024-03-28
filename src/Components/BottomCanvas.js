@@ -16,9 +16,9 @@ function BottomCanvas() {
       </Button>
 
       <Offcanvas show={show} onHide={handleClose} placement='bottom'>
-        <Offcanvas.Header className='mx-auto' closeButton>
-          <Offcanvas.Title>Pick your Answer</Offcanvas.Title>
-        </Offcanvas.Header>
+        {/* <Offcanvas.Header className='mx-auto' closeButton>
+          <Offcanvas.Title>Pick an Answer</Offcanvas.Title>
+        </Offcanvas.Header> */}
         <Offcanvas.Body>
           <AnswersCarousel />
         </Offcanvas.Body>
