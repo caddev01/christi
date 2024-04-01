@@ -15,7 +15,7 @@ function BottomCanvas() {
         Attempt
       </Button>
 
-      <Offcanvas show={show} onHide={handleClose} placement='bottom'>
+      <Offcanvas show={show} onHide={handleClose} placement='bottom' className='text-bg-dark'>
         {/* <Offcanvas.Header className='mx-auto' closeButton>
           <Offcanvas.Title>Pick an Answer</Offcanvas.Title>
         </Offcanvas.Header> */}
