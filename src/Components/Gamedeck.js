@@ -14,7 +14,7 @@ const Gamedeck = () => {
                     <div className="card mb-3 mt-2" style={{maxWidth: '700px'}}>
                         <div className="row g-0">
                             <div className="col-md-7">
-                            <img src="https://plus.unsplash.com/premium_photo-1698170370655-d89aa9eba01f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGtuaWdodHxlbnwwfHwwfHx8MA%3D%3D" className="img-fluid rounded-start" alt="..." />
+                            <img src="https://images.unsplash.com/photo-1460194436988-671f763436b7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8a25pZ2h0fGVufDB8fDB8fHww" className="img-fluid rounded-start" alt="..." />
                             </div>
                             <div className="col-md-5">
                             <div className="card-body">

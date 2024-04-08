@@ -29,13 +29,13 @@ Progress[
 ]
 
 Tools to use{
-    -Cards
-    -Carousel
+    -Cards*
+    -Carousel*
     -Collapse
     -Dropdown
     -Modal
-    -Change to navbar
-    -Offcanvas
+    -Change to navbar*
+    -Offcanvas*
     -Popover
     -Progress
     -*Spinners

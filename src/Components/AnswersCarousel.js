@@ -3,8 +3,8 @@ import Carousel from 'react-bootstrap/Carousel';
 
 function AnswersCarousel() {
   return (
-    <Carousel>
-      <Carousel.Item interval={1000} aria-controls={false} >
+    <Carousel controls={false} indicators={false}>
+      <Carousel.Item interval={1000}>
         {/* <ExampleCarouselImage text="First slide" /> */}
         <img 
             className='d-block mx-auto'
@@ -14,7 +14,7 @@ function AnswersCarousel() {
         />
         <Carousel.Caption>
           {/* <h3>First slide label</h3> */}
-          <p>A charging horseman</p>
+          <p>Pharoah to the Nile</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item interval={500}>
@@ -27,7 +27,7 @@ function AnswersCarousel() {
         />
         <Carousel.Caption>
           {/* <h3>Second slide label</h3> */}
-          <p>A fiery Knight</p>
+          <p>Joshua against giants</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item interval={2000}>
@@ -41,7 +41,7 @@ function AnswersCarousel() {
         <Carousel.Caption>
           {/* <h3>Third slide label</h3> */}
           <p>
-            The swordsman
+            David and his sling
           </p>
         </Carousel.Caption>
       </Carousel.Item>
