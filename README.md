@@ -26,6 +26,9 @@ Progress[
     - Trying to center the Gamedeck feauture vertically
     - create the answer options with offcanvas and carousel{currently trying to figure out how to use the vertical-align class to vertically center the Gamedeck element}
     -attemping to remove the control icons on the carousel
+    - removed the icons and indicators from the carousel
+    - change the timer card to a timer and score card
+    - timer and score card created, footer size to be adjusted.
 ]
 
 Tools to use{
