@@ -32,8 +32,8 @@ const Gamedeck = () => {
                     <div className='d-flex mb-3 justify-content-center align-items-center vstack'>
 
                         {/* Timer */}
-                        <div className='card-group'>
-                            <div className="card text-center mt-2" style={{maxWidth:'300px'}}>
+                        <div className='card-group' style={{minWidth:'170px'}}>
+                            <div className="card text-center mt-2">
                                 <div className="card-header">
                                     Timer
                                 </div>
@@ -41,16 +41,16 @@ const Gamedeck = () => {
                                     <h5 className="card-title">30s</h5>
                                 </div>
                                 <div className="card-footer text-body-secondary">
-                                    Points to get
+                                    Points
                                 </div>
                             </div>
 
-                            <div className="card text-center mt-2" style={{maxWidth:'150px'}}>
+                            <div className="card text-center mt-2">
                                 <div className="card-header">
                                     Score
                                 </div>
                                 <div className="card-body">
-                                    <h5 className="card-title">30s</h5>
+                                    <h5 className="card-title">5</h5>
                                 </div>
                                 <div className="card-footer text-body-secondary">
                                     3 more
