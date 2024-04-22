@@ -30,7 +30,7 @@ Progress[
     - change the timer card to a timer and score card
     - timer and score card created, footer size to be adjusted.
     - footer size adjusted
-    - Create a profile page for users
+    - *Create a profile page for users*
     - Create a general dashhboard for users results and activities.
     - Start backend...
 ]
