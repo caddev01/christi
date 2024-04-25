@@ -19,11 +19,21 @@ function UserCanvas() {
       </svg>
 
       <Offcanvas show={show} onHide={handleClose} placement='end' className='text-bg-dark'>
-        {/* <Offcanvas.Header className='mx-auto' closeButton>
-          <Offcanvas.Title>Pick an Answer</Offcanvas.Title>
-        </Offcanvas.Header> */}
-        <Offcanvas.Body>
-          User Profile
+        <Offcanvas.Header className='text-align-right' closeButton>
+          <Offcanvas.Title className='mx-auto'>Ulu Osi</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body className='mx-auto'>
+          <div className='text-center'>
+            <img src="https://i.pinimg.com/474x/7b/8d/3e/7b8d3e8cf9f26fcfb7034daf6c8b2761.jpg" class="rounded-circle" alt="..." style={{height:'200px'}} />
+            <hr />
+            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+              <button type="button" class="btn btn-danger">Convert</button>
+              <button type="button" class="btn btn-warning">Middle</button>
+              <button type="button" class="btn btn-success">Right</button>
+              <button type="button" class="btn btn-warning">Middle</button>
+              <button type="button" class="btn btn-success">Right</button>
+            </div>
+          </div>
         </Offcanvas.Body>
       </Offcanvas>
     </>
