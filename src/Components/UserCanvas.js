@@ -20,23 +20,23 @@ function UserCanvas() {
 
       <Offcanvas show={show} onHide={handleClose} placement='end' className='text-bg-dark'>
         <Offcanvas.Header className='text-align-right' closeButton>
-          <Offcanvas.Title className='mx-auto'>Ulu Osi</Offcanvas.Title>
+          <Offcanvas.Title className='mx-auto'>Ulu_Osi</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body className='mx-auto'>
           <div className='text-center'>
-            <img src="https://i.pinimg.com/474x/7b/8d/3e/7b8d3e8cf9f26fcfb7034daf6c8b2761.jpg" class="rounded-circle" alt="..." style={{height:'200px'}} />
+            <img src="https://i.pinimg.com/474x/7b/8d/3e/7b8d3e8cf9f26fcfb7034daf6c8b2761.jpg" className="rounded-circle" alt="..." style={{height:'200px'}} />
             <hr />
-            <div class="btn-group" role="group" aria-label="Basic outlined example">
-              <button type="button" class="btn btn-outline-danger">Convert</button>
-              <button type="button" class="btn btn-outline-danger active">Saint</button>
-              <button type="button" class="btn btn-outline-danger">Leader</button>
-              <button type="button" class="btn btn-outline-danger">Anointed</button>
+            <div className="btn-group" role="group" aria-label="Basic outlined example">
+              <button type="button" className="btn btn-outline-danger">Convert</button>
+              <button type="button" className="btn btn-outline-danger active">Saint</button>
+              <button type="button" className="btn btn-outline-danger">Leader</button>
+              <button type="button" className="btn btn-outline-danger">Anointed</button>
             </div>
-            <div class="card text-bg-danger mt-4 mx-auto" style={{width:'60%'}}>
-                <div class="card-body">
+            <div className="card text-bg-danger mt-4 mx-auto" style={{width:'60%'}}>
+                <div className="card-body">
                   <p className='fs-1 fst-italic'>7.5</p>
                 </div>
-                <div class="card-footer">Spirituality</div>
+                <div className="card-footer">Spirituality</div>
             </div>
           </div>
         </Offcanvas.Body>
