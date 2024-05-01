@@ -10,3 +10,7 @@ Levels{
     Leader
     Anointed
 }
+
+bar colors{
+    blue,red,brown,grey,yellow
+}
