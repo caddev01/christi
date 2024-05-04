@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // import {Button} from "react-bootstrap";
 import Home from './Pages/Home';
 import Heroes from './Pages/Heroes';
+import Board from './Pages/Board';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route index element={ <Home /> } />
         <Route path="/heroes" element={ <Heroes /> } />
+        <Route path="/board" element={ <Board /> } />
       </Routes>
     </BrowserRouter>
   );
