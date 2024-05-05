@@ -2,10 +2,11 @@ import Table from 'react-bootstrap/Table';
 
 export default function UsersTable () {
     return(
-        <table class="mx-auto mt-4 table table-borderless" style={{width:'70%'}}>
+        <div className='border rounded mt-4 mx-auto bg-dark' style={{width:'80%'}}>
+            <table class="mx-auto mt-2 table table-dark text-center" style={{width:'90%'}}>
             <thead>
                 <tr>
-                <th scope="col">User</th>
+                <th scope="col">Saint</th>
                 <th scope="col">Spirituality</th>
                 <th scope="col">Rating</th>
                 </tr>
@@ -28,5 +29,6 @@ export default function UsersTable () {
                 </tr>
             </tbody>
         </table>
+        </div>
     );
 };

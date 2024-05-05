@@ -44,13 +44,13 @@ Tools to use{
     -Change to navbar*
     -Offcanvas*
     -Popover
-    -Progress
+    -Progress*
     -*Spinners
     -Tooltip
 }
 
 Scope{
-    Frontend
+    Frontend*
     Backend
     Hosting
     CyberSecurity

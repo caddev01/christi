@@ -3,6 +3,7 @@ import Footer from "../Components/Footer";
 import Progressbar from "../Components/Progress";
 import Footer2 from "../Components/Footer2";
 import UsersTable from "../Components/UsersTable";
+import TopSaint from "../Components/TopSaint";
 
 export default function Board () {
     return(
@@ -10,7 +11,8 @@ export default function Board () {
             <Header />
             <Progressbar /> 
             <UsersTable />
-            <Footer2 />
+            <TopSaint />
+            <Footer />
         </div>
     );
 };
