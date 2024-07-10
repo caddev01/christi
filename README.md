@@ -31,8 +31,8 @@ Progress[
     - timer and score card created, footer size to be adjusted.
     - footer size adjusted
     - Create a profile page for users
-    - *Create a general dashhboard for users results and activities*
-    - Start backend...
+    - Create a general dashhboard for users results and activities
+    - *Starting backend...*
 ]
 
 Tools to use{
@@ -50,8 +50,8 @@ Tools to use{
 }
 
 Scope{
-    Frontend*
-    Backend
+    Frontend
+    *Backend*
     Hosting
     CyberSecurity
 }
