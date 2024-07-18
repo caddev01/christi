@@ -32,6 +32,7 @@ Progress[
     - footer size adjusted
     - Create a profile page for users
     - Create a general dashhboard for users results and activities
+    - Creating the quiz component***
     - *Starting backend...*
 ]
 
