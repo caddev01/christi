@@ -16,3 +16,5 @@ bar colors{
 }
 
 male anime {https://i.pinimg.com/236x/bb/9d/a4/bb9da404a092fdba1538bfb3f6f1d502.jpg}
+
+Peter's image{https://i.pinimg.com/474x/19/3d/5e/193d5e71653eb0647e5df815d9b56534.jpg}

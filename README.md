@@ -33,7 +33,8 @@ Progress[
     - Create a profile page for users
     - Create a general dashhboard for users results and activities
     - Creating the quiz component***{
-        about to create answer options with the react-buttons***
+        about to create answer options with the react-buttons
+        next to create the quizer initiator button***
     }
     - *Starting backend...*
 ]
