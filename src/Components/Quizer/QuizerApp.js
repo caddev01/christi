@@ -13,6 +13,11 @@ function QuizerApp () {
     const [showText, setShowText] = useState(false);
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [startQuizer, setStartQuizer] = useState(false);
+    const [selecter, setSelecter] = useState(false);
+
+    const handleStartQuizer = (selecter) => {
+        selecter === true && setCurrentQuestion(1);
+    };
 
     const handleAnswerOptionClick = (selectedAnswer) => {
         selectedAnswer === questions[currentQuestion].correctAnswer && setScore(score + 1);
@@ -28,6 +33,26 @@ function QuizerApp () {
     return (
 
         <div className="container border border-secondary rounded mx-auto mt-5 text-center" style={{width:'70%'}}>
+
+            {/* {startQuizer ? (
+                <div>
+                
+                </div>
+            ) : (
+                <div>
+                    <h3>The Apostles</h3>
+                    <button 
+                    className='button button-secondary'
+                    key={setSelecter(true)}
+                    onClick={
+                        () => handleStartQuizer(selecter)
+                    }
+                    >
+                        Start!
+                    </button>
+                </div>
+            )}; */}
+
             {showScore ? (
                 <div className='score-section'>
                     <i>A {score} in {questions.length} score for you saint</i>
@@ -39,10 +64,6 @@ function QuizerApp () {
             <Badge bg='danger' pill>{currentQuestion +1}/{questions.length}</Badge>
             <p className="text-center mt-2">{questions[currentQuestion].question}</p>
             <div className="btn-group row mx-2" role="group" aria-label="Basic outlined example">
-                {/* <button type="button" className="btn btn-outline-danger col-sm-3">Option 1</button>
-                <button type="button" className="btn btn-outline-danger col-sm-3">Option 2</button>
-                <button type="button" className="btn btn-outline-danger col-sm-3">Option 3</button>
-                <button type="button" className="btn btn-outline-danger col-sm-3">Option 4</button> */}
 
                 {questions[currentQuestion].options.map((option) =>(
                     <button
