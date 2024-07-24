@@ -13,10 +13,10 @@ function QuizerApp () {
     const [showText, setShowText] = useState(false);
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [startQuizer, setStartQuizer] = useState(false);
-    const [selecter, setSelecter] = useState(false);
 
-    const handleStartQuizer = (selecter) => {
-        selecter === true && setCurrentQuestion(1);
+    const handleStartQuizer = () => {
+        setStartQuizer(true);
+        startQuizer === true && setCurrentQuestion(1)
     };
 
     const handleAnswerOptionClick = (selectedAnswer) => {
@@ -32,54 +32,56 @@ function QuizerApp () {
 
     return (
 
-        <div className="container border border-secondary rounded mx-auto mt-5 text-center" style={{width:'70%'}}>
+        <div className="container border border-secondary rounded mx-auto mt-5 mb-5 text-center" style={{width:'70%'}}>
 
-            {/* {startQuizer ? (
+            {startQuizer ? (
                 <div>
-                
+                {
+                    showScore ? (
+                        <div className='score-section'>
+                            <p className='mt-1'><i>A {score} in {questions.length} score for you saint</i></p>
+                            {showText && <h4>Agalio! Perfect score!</h4>}
+                            <div class="btn-group mb-2" role="group" aria-label="Basic mixed styles example">
+                                <button type="button" class="btn btn-danger">Left</button>
+                                <button type="button" class="btn btn-success">Right</button>
+                            </div>
+                        </div>
+                    ) : (
+                        <div>
+                            {/* <h3 className="text-center my-2">Lets Go!</h3> */}
+                    <Badge bg='danger' pill>{currentQuestion +1}/{questions.length}</Badge>
+                    <p className="text-center mt-2">{questions[currentQuestion].question}</p>
+                    <div className="btn-group row mx-2" role="group" aria-label="Basic outlined example">
+        
+                        {questions[currentQuestion].options.map((option) =>(
+                            <button
+                                className="btn btn-outline-danger col-sm-3"
+                                key = {option}
+                                onClick={() => handleAnswerOptionClick(option)}
+                            >
+                                {option}
+                            </button>
+                        ) )}
+                    </div>
+                    <hr/>
+                    <h3 className="text-center text-secondary">Apostle ______?</h3>
+                        </div>
+                    )
+                }
                 </div>
             ) : (
                 <div>
                     <h3>The Apostles</h3>
                     <button 
-                    className='button button-secondary'
-                    key={setSelecter(true)}
-                    onClick={
-                        () => handleStartQuizer(selecter)
-                    }
+                    className='btn btn-danger mb-2'
+                    onClick={() => handleStartQuizer()}
                     >
                         Start!
                     </button>
                 </div>
-            )}; */}
-
-            {showScore ? (
-                <div className='score-section'>
-                    <i>A {score} in {questions.length} score for you saint</i>
-                    {showText && <h4>Agalio! Perfect score!</h4>}
-                </div>
-            ) : (
-                <div>
-                    {/* <h3 className="text-center my-2">Lets Go!</h3> */}
-            <Badge bg='danger' pill>{currentQuestion +1}/{questions.length}</Badge>
-            <p className="text-center mt-2">{questions[currentQuestion].question}</p>
-            <div className="btn-group row mx-2" role="group" aria-label="Basic outlined example">
-
-                {questions[currentQuestion].options.map((option) =>(
-                    <button
-                        className="btn btn-outline-danger col-sm-3"
-                        key = {option}
-                        onClick={() => handleAnswerOptionClick(option)}
-                    >
-                        {option}
-                    </button>
-                ) )}
-            </div>
-            <hr/>
-            <h3 className="text-center text-secondary">Apostle ______?</h3>
-                </div>
             )}
-            
+
+             
         </div>
 
     );
