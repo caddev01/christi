@@ -15,8 +15,7 @@ function QuizerApp () {
     const [startQuizer, setStartQuizer] = useState(false);
 
     const handleStartQuizer = () => {
-        setStartQuizer(true);
-        startQuizer === true && setCurrentQuestion(1)
+        setStartQuizer(true) && setCurrentQuestion(1) 
     };
 
     const handleAnswerOptionClick = (selectedAnswer) => {
@@ -30,6 +29,10 @@ function QuizerApp () {
         }
     };
 
+    const handleRestartQuizer = () => {
+        setScore(0); setShowScore(false); setShowText(false); setCurrentQuestion(0); setStartQuizer(false);
+    }
+
     return (
 
         <div className="container border border-secondary rounded mx-auto mt-5 mb-5 text-center" style={{width:'70%'}}>
@@ -42,18 +45,18 @@ function QuizerApp () {
                             <p className='mt-1'><i>A {score} in {questions.length} score for you saint</i></p>
                             {showText && <h4>Agalio! Perfect score!</h4>}
                             <div class="btn-group mb-2" role="group" aria-label="Basic mixed styles example">
-                                <button type="button" class="btn btn-danger">Left</button>
-                                <button type="button" class="btn btn-success">Right</button>
+                                <button type="button" class="btn btn-danger" onClick={()=>handleRestartQuizer()}>Again</button>
+                                <button type="button" class="btn btn-success">Next</button>
                             </div>
                         </div>
                     ) : (
                         <div>
                             {/* <h3 className="text-center my-2">Lets Go!</h3> */}
-                    <Badge bg='danger' pill>{currentQuestion +1}/{questions.length}</Badge>
-                    <p className="text-center mt-2">{questions[currentQuestion].question}</p>
-                    <div className="btn-group row mx-2" role="group" aria-label="Basic outlined example">
+                            <Badge bg='danger' pill>{currentQuestion +1}/{questions.length}</Badge>
+                            <p className="text-center mt-2">{questions[currentQuestion].question}</p>
+                            <div className="btn-group row mx-2" role="group" aria-label="Basic outlined example">
         
-                        {questions[currentQuestion].options.map((option) =>(
+                            {questions[currentQuestion].options.map((option) =>(
                             <button
                                 className="btn btn-outline-danger col-sm-3"
                                 key = {option}
@@ -74,7 +77,9 @@ function QuizerApp () {
                     <h3>The Apostles</h3>
                     <button 
                     className='btn btn-danger mb-2'
-                    onClick={() => handleStartQuizer()}
+                    onClick={
+                        () => handleStartQuizer()
+                    }
                     >
                         Start!
                     </button>
