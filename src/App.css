@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lumanosimo&display=swap');
+
 .App {
   text-align: center;
 }
@@ -26,6 +28,13 @@
 
 .App-link {
   color: gray;
+}
+
+.josefin-sans {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
 }
 
 @keyframes App-logo-spin {

@@ -6,7 +6,21 @@ import BottomCanvas from '../Components/BottomCanvas';
 const Gamedeck = () => {
     return(
 
-        // Question deck
+        <div>
+            {/* //Start Quizer */}
+            <div className='d-flex text-center'>
+                <div class="d-flex row align-items-center justify-contents-center mt-3 mb-2 mx-auto">
+                    <div class="flex-shrink-0 col-md">
+                        <img src="https://i.pinimg.com/236x/31/40/bb/3140bbe68d99cb693a1fc7a950d9d035.jpg" alt="..." className="img-fluid rounded" />
+                    </div>
+                    <div class="flex-grow-1 col-md ms-3">
+                        <h2 className='josefin-sans mt-2'>Heroes</h2>
+                        <button className='btn btn-danger josefin-sans'>Begin</button>
+                    </div>
+                </div>
+            </div>
+            
+            {/* // Question deck */}
         <div className="container border border-secondary rounded mx-auto mt-5 h-100 mb-5" style={{width:'70%'}}>
             <div className='row'>
                 {/* Question Card */}
@@ -65,6 +79,10 @@ const Gamedeck = () => {
             </div>
 
         </div>
+
+        </div>
+
+        
 
     );
 }
