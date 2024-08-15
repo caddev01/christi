@@ -7,6 +7,7 @@ import Home from './Pages/Home';
 import Heroes from './Pages/Heroes';
 import Board from './Pages/Board';
 import Apostles from './Pages/Apostles';
+import Trials from './Pages/Trials';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/heroes" element={ <Heroes /> } />
         <Route path="/board" element={ <Board /> } />
         <Route path="/apostles" element={ <Apostles /> } />
+        <Route path="/trials" element={ <Trials /> } />
       </Routes>
     </BrowserRouter>
   );
