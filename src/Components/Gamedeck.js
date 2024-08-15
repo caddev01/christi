@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import BottomCanvas from '../Components/BottomCanvas';
 import questions from './Quizer/HeroesQuestions';
+import Badge from 'react-bootstrap/Badge';
 
 
 function Gamedeck () {
@@ -49,9 +50,8 @@ function Gamedeck () {
                                 </div>
                                 <div className="col-md-5">
                                 <div className="card-body">
-                                    <h5 className="card-title">question</h5>
+                                    <h5 className="card-title">{questions[currentQuestion].title}</h5>
                                     <p className="card-text">{questions[currentQuestion].question}</p>
-                                    <p className="card-text"><small className="text-body-secondary">not a disciple or prophet</small></p>
                                 </div>
                                 </div>
                             </div>
@@ -84,7 +84,7 @@ function Gamedeck () {
                                         <h5 className="card-title">5</h5>
                                     </div>
                                     <div className="card-footer text-body-secondary">
-                                        3 more
+                                        {questions.length - currentQuestion - 1} more
                                     </div>
                                 </div>
                             </div>
