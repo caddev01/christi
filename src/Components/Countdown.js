@@ -1,15 +1,16 @@
-import { getSeconds } from "date-fns";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, toString } from "react";
 
 function Countdown () {
     const [timer, setTimer] = useState("00:00:00")
-    const [newTime, setNewTime] = useState("00")
+    const [newTime, setNewTime] = useState("00", "00")
+    var [score, setScore] = useState(30)
     const Ref = useRef()
+    const Refscore = useRef()
 
     function getTimeRemaining(e) {
         const total = Date.parse(e) - Date.parse(new Date())
-        const hour = Math.floor((total / (1000 * 60 * 60)) % 24);
-        const minute = Math.floor((total / 1000 / 60) % 60);
+        const hour = Math.floor((total / (60 * 60 * 1000)) % 24);
+        const minute = Math.floor((total / (60 * 1000)) % 60);
         const second = Math.floor((total / 1000) % 60);
 
         return{total, hour, minute, second};
@@ -26,11 +27,6 @@ function Countdown () {
         }
     }
 
-    function Add (e){
-        var {total, hour, minute, second} = getTimeRemaining(e);
-        setNewTime(getSeconds(second));
-    }
-
     function clearTimer (e) {
         setTimer("00:00:30")
         if(Ref.current) clearInterval(Ref.current);
@@ -39,10 +35,39 @@ function Countdown () {
         }, 1000)
     }
 
+    function startScore(score) {
+        setScore(30)
+        var newScore = score - 5;
+        setScore(newScore)
+    }
+
+    function clearGrade (score) {
+        // setTimer("00:00:30")
+        // setScore(30)
+        if(Refscore.current) clearInterval(Refscore.current);
+        const Idd = setInterval(() => {
+            // startTimer(e)
+            startScore(score)
+        }, 5000)
+    }
+
     function getDeadTime(){
         let deadline = new Date();
         deadline.setSeconds(deadline.getSeconds() + 30);
         return deadline;
+    }
+
+    
+    function Add (){
+        var nowTime = Date.parse(getDeadTime());
+        const hour = Math.floor((nowTime / (60 * 60 * 1000)) % 24);
+        const minute = Math.floor((nowTime / (60 * 1000)) % 60);
+        const second = Math.floor((nowTime / 1000) % 60);
+
+        const showTime =  (hour > 9 ? hour : "0" + hour) + ":" +
+        (minute > 9 ? minute : "0" + minute) + ":" +
+        (second > 9 ? second : "0" + second)
+        setNewTime(showTime + ", " + nowTime);
     }
 
     function Reset() {
@@ -51,6 +76,7 @@ function Countdown () {
 
     useEffect(()=>{
         clearTimer(getDeadTime()) 
+        clearGrade(score)
     }, [])
 
     return(
@@ -65,6 +91,7 @@ function Countdown () {
             <button className="btn btn-danger ms-2 m-2 mx-auto" style={{width:"100px"}} onClick={Add}>Add</button>
             </span>
             <p className="text-danger m-1">{newTime}</p>
+            <p className="text-danger m-1">Score: {score}</p>
         </div>
     )
 }
