@@ -36,19 +36,21 @@ function Countdown () {
     }
 
     function startScore(score) {
-        setScore(30)
         var newScore = score - 5;
         setScore(newScore)
     }
 
-    function clearGrade (score) {
-        // setTimer("00:00:30")
-        // setScore(30)
+    function clearGrade () {
         if(Refscore.current) clearInterval(Refscore.current);
         const Idd = setInterval(() => {
             // startTimer(e)
-            startScore(score)
+            startScore()
         }, 5000)
+    }
+
+    function calcScore (){
+        let gameScore = score - 5;
+        return gameScore;
     }
 
     function getDeadTime(){
@@ -76,7 +78,7 @@ function Countdown () {
 
     useEffect(()=>{
         clearTimer(getDeadTime()) 
-        clearGrade(score)
+        clearGrade()
     }, [])
 
     return(

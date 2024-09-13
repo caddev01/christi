@@ -35,6 +35,7 @@ Progress[
     - Creating the quiz component***{
         about to create answer options with the react-buttons
         next to create the quizer initiator button***
+    - Fixing the Countdown function
     }
     - *Starting backend...*
 ]
