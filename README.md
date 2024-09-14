@@ -36,6 +36,8 @@ Progress[
         about to create answer options with the react-buttons
         next to create the quizer initiator button***
     - Fixing the Countdown function
+    - Completed the countdown
+    - *now to completing the Heroes component*
     }
     - *Starting backend...*
 ]

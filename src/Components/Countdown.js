@@ -1,11 +1,11 @@
 import { useState, useRef, useEffect, toString } from "react";
 
 function Countdown () {
-    const [timer, setTimer] = useState("00:00:00")
-    const [newTime, setNewTime] = useState("00", "00")
-    var [score, setScore] = useState(30)
+    const [timing, setTiming] = useState("00:00:00")
+    const [mark, setMark] = useState("30")
+    const [grade, setGrade] = useState("0")
     const Ref = useRef()
-    const Refscore = useRef()
+    const Refmark = useRef()
 
     function getTimeRemaining(e) {
         const total = Date.parse(e) - Date.parse(new Date())
@@ -16,10 +16,10 @@ function Countdown () {
         return{total, hour, minute, second};
     }
 
-    function startTimer (e){
+    function startTiming (e){
         let {total, hour, minute, second} = getTimeRemaining(e);
         if(total >= 0){
-            setTimer(
+            setTiming(
                 (hour > 9 ? hour : "0" + hour) + ":" +
                 (minute > 9 ? minute : "0" + minute) + ":" +
                 (second > 9 ? second : "0" + second)
@@ -27,30 +27,12 @@ function Countdown () {
         }
     }
 
-    function clearTimer (e) {
-        setTimer("00:00:30")
+    function clearTiming (e) {
+        setTiming("00:00:30")
         if(Ref.current) clearInterval(Ref.current);
         const Id = setInterval(() => {
-            startTimer(e)
+            startTiming(e)
         }, 1000)
-    }
-
-    function startScore(score) {
-        var newScore = score - 5;
-        setScore(newScore)
-    }
-
-    function clearGrade () {
-        if(Refscore.current) clearInterval(Refscore.current);
-        const Idd = setInterval(() => {
-            // startTimer(e)
-            startScore()
-        }, 5000)
-    }
-
-    function calcScore (){
-        let gameScore = score - 5;
-        return gameScore;
     }
 
     function getDeadTime(){
@@ -59,43 +41,65 @@ function Countdown () {
         return deadline;
     }
 
-    
-    function Add (){
-        var nowTime = Date.parse(getDeadTime());
-        const hour = Math.floor((nowTime / (60 * 60 * 1000)) % 24);
-        const minute = Math.floor((nowTime / (60 * 1000)) % 60);
-        const second = Math.floor((nowTime / 1000) % 60);
+    function getMarkRemaining(a) {
+        const total = Date.parse(a) - Date.parse(new Date())
+        const second = Math.floor((total / 1000) % 60);
 
-        const showTime =  (hour > 9 ? hour : "0" + hour) + ":" +
-        (minute > 9 ? minute : "0" + minute) + ":" +
-        (second > 9 ? second : "0" + second)
-        setNewTime(showTime + ", " + nowTime);
+        return{total, second};
+    }
+
+    function startMark (a){
+        let {total, second} = getMarkRemaining(a);
+        if(total >= 0){
+            setMark(
+                (second > 9 ? second : "0" + second)
+            )
+        }
+    }
+
+    function clearMark (a) {
+        setTiming("00:00:30")
+        if(Refmark.current) clearInterval(Refmark.current);
+        const Id = setInterval(() => {
+            startMark(a)
+        }, 5000)
+    }
+
+    function getDeadMark(){
+        let deadmark = new Date();
+        deadmark.setSeconds(deadmark.getSeconds() + 30);
+        return deadmark;
+    }
+
+   function Add(){
+        setGrade(mark)
     }
 
     function Reset() {
-        clearTimer(getDeadTime())
+        clearTiming(getDeadTime())
     }
 
     useEffect(()=>{
-        clearTimer(getDeadTime()) 
-        clearGrade()
+        clearTiming(getDeadTime());
+        clearMark(getDeadMark());
     }, [])
 
     return(
         <div className="card mx-auto mt-5 text-center" style={{width:"300px"}}>
-            <h3>Timer</h3>
+            <h3>Timing</h3>
             <div className="card-body">
-                {timer}
+                {timing}
                 {/* 00:00:00 */}
             </div>
             <span>
             <button className="btn btn-danger m-2 mx-auto" style={{width:"100px"}} onClick={Reset}>Reset</button>
             <button className="btn btn-danger ms-2 m-2 mx-auto" style={{width:"100px"}} onClick={Add}>Add</button>
             </span>
-            <p className="text-danger m-1">{newTime}</p>
-            <p className="text-danger m-1">Score: {score}</p>
+            <p className="text-danger m-1">{grade}</p>
+            <p className="text-danger m-1">Mark: {mark}</p>
         </div>
     )
+    return {timing, mark};
 }
 
 export default Countdown;
