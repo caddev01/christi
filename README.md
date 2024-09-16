@@ -38,6 +38,7 @@ Progress[
     - Fixing the Countdown function
     - Completed the countdown
     - *now to completing the Heroes component*
+    - *brainstormed the countdown algorithm*
     }
     - *Starting backend...*
 ]
