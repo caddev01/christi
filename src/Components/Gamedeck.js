@@ -1,13 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import BottomCanvas from '../Components/BottomCanvas';
 import questions from './Quizer/HeroesQuestions';
 import Badge from 'react-bootstrap/Badge';
-import Countdown, { mark, timing } from './Countdown';
+import Countier from './CountdownTwo';
 
-
-function Gamedeck () {
+function Gamedeck ({ timing }) {
     
     const [score, setScore] = useState(0);
     const [showScore, setShowScore] = useState(false);
@@ -70,7 +69,7 @@ function Gamedeck () {
                                         Timer
                                     </div>
                                     <div className="card-body">
-                                        <h5 className="card-title">30s</h5>
+                                        <h5 className="card-title">{timing}</h5>
                                     </div>
                                     <div className="card-footer text-body-secondary">
                                         Points

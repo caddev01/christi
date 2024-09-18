@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect, toString } from "react";
+import Gamedeck from "./Gamedeck";
 
 function Countdown () {
     const [timing, setTiming] = useState("00:00:00")
@@ -99,7 +100,6 @@ function Countdown () {
             <p className="text-danger m-1">Mark: {mark}</p>
         </div>
     )
-    return {timing, mark};
 }
 
 export default Countdown;
