@@ -23,7 +23,6 @@ const Counter = () => {
     
             if (distance < 0) {
                 //stop timer
-                clearInterval(interval.current);
             }else{
                 //updateTimer
                 setTImerDays(days);

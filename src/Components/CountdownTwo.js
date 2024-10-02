@@ -86,24 +86,32 @@ function Countier () {
             clearTiming(getDeadTime());
             clearMark(getDeadMark());
         }, [])
-
-        return(
-            <div className="card mx-auto mt-5 text-center" style={{width:"300px"}}>
-                <h3>Timing</h3>
-                <div className="card-body">
-                    {timing}
-                    {/* 00:00:00 */}
-                </div>
-                <span>
-                <button className="btn btn-danger m-2 mx-auto" style={{width:"100px"}} onClick={Reset}>Reset</button>
-                <button className="btn btn-danger ms-2 m-2 mx-auto" style={{width:"100px"}} onClick={Add}>Add</button>
-                </span>
-                <p className="text-danger m-1">{grade}</p>
-                <p className="text-danger m-1">Mark: {mark}</p>
-            </div>
-        )
-    
+        
+        return{ timing }
     }
+
+    let timing = timing;
+
+    return(
+        
+        <div>
+            <Gamedeck downcount = {Countdown} timing = {timing} />
+        </div>
+        
+        // <div className="card mx-auto mt-5 text-center" style={{width:"300px"}}>
+        //     <h3>Timing</h3>
+        //     <div className="card-body">
+        //         {timing}
+        //     </div>
+        //     <span>
+        //     <button className="btn btn-danger m-2 mx-auto" style={{width:"100px"}} onClick={Reset}>Reset</button>
+        //     <button className="btn btn-danger ms-2 m-2 mx-auto" style={{width:"100px"}} onClick={Add}>Add</button>
+        //     </span>
+        //     <p className="text-danger m-1">{grade}</p>
+        //     <p className="text-danger m-1">Mark: {mark}</p>
+        //     <Gamedeck timing = {timing} />
+        // </div>
+    )
 
 }
 

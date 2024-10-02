@@ -2,7 +2,7 @@ import { useState, useRef, useEffect, toString } from "react";
 import Gamedeck from "./Gamedeck";
 
 function Countdown () {
-    const [timing, setTiming] = useState("00:00:00")
+    const [timing, setTiming] = useState("00:00")
     const [mark, setMark] = useState("30")
     const [grade, setGrade] = useState("0")
     const Ref = useRef()
@@ -21,7 +21,6 @@ function Countdown () {
         let {total, hour, minute, second} = getTimeRemaining(e);
         if(total >= 0){
             setTiming(
-                (hour > 9 ? hour : "0" + hour) + ":" +
                 (minute > 9 ? minute : "0" + minute) + ":" +
                 (second > 9 ? second : "0" + second)
             )
@@ -29,7 +28,7 @@ function Countdown () {
     }
 
     function clearTiming (e) {
-        setTiming("00:00:30")
+        setTiming("00:30")
         if(Ref.current) clearInterval(Ref.current);
         const Id = setInterval(() => {
             startTiming(e)
@@ -59,7 +58,7 @@ function Countdown () {
     }
 
     function clearMark (a) {
-        setTiming("00:00:30")
+        setTiming("00:30")
         if(Refmark.current) clearInterval(Refmark.current);
         const Id = setInterval(() => {
             startMark(a)
@@ -86,19 +85,22 @@ function Countdown () {
     }, [])
 
     return(
-        <div className="card mx-auto mt-5 text-center" style={{width:"300px"}}>
-            <h3>Timing</h3>
-            <div className="card-body">
-                {timing}
-                {/* 00:00:00 */}
-            </div>
-            <span>
-            <button className="btn btn-danger m-2 mx-auto" style={{width:"100px"}} onClick={Reset}>Reset</button>
-            <button className="btn btn-danger ms-2 m-2 mx-auto" style={{width:"100px"}} onClick={Add}>Add</button>
-            </span>
-            <p className="text-danger m-1">{grade}</p>
-            <p className="text-danger m-1">Mark: {mark}</p>
-        </div>
+
+        <div><span className="text-primary">{timing}</span> <span className="text-danger">{mark}</span></div>
+
+        // <div className="card mx-auto mt-5 text-center" style={{width:"300px"}}>
+        //     <h3>Timing</h3>
+        //     <div className="card-body">
+        //         {timing}
+        //         {/* 00:00:00 */}
+        //     </div>
+        //     <span>
+        //     <button className="btn btn-danger m-2 mx-auto" style={{width:"100px"}} onClick={Reset}>Reset</button>
+        //     <button className="btn btn-danger ms-2 m-2 mx-auto" style={{width:"100px"}} onClick={Add}>Add</button>
+        //     </span>
+        //     <p className="text-danger m-1">{grade}</p>
+        //     <p className="text-danger m-1">Mark: {mark}</p>
+        // </div>
     )
 }
 

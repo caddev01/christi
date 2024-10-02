@@ -5,8 +5,9 @@ import BottomCanvas from '../Components/BottomCanvas';
 import questions from './Quizer/HeroesQuestions';
 import Badge from 'react-bootstrap/Badge';
 import Countier from './CountdownTwo';
+import Countdown from './Countdown';
 
-function Gamedeck ({ timing }) {
+function Gamedeck ({ downcount, timing }) {
     
     const [score, setScore] = useState(0);
     const [showScore, setShowScore] = useState(false);
@@ -15,7 +16,7 @@ function Gamedeck ({ timing }) {
     const [startQuizer, setStartQuizer] = useState(false);
 
     const handleStartQuizer = () => {
-        setStartQuizer(true) && setCurrentQuestion(1) 
+        setStartQuizer(true) && setCurrentQuestion(1);
     };
 
     const handleAnswerOptionClick = (selectedAnswer) => {
@@ -66,25 +67,13 @@ function Gamedeck ({ timing }) {
                             <div className='card-group' style={{minWidth:'170px'}}>
                                 <div className="card text-center mt-2">
                                     <div className="card-header">
-                                        Timer
+                                        <span className='text-primary'>Timer</span> - <span className='text-danger'>Score</span>
                                     </div>
                                     <div className="card-body">
-                                        <h5 className="card-title">{timing}</h5>
+                                        <h5 className="card-title"><Countdown /></h5>
                                     </div>
                                     <div className="card-footer text-body-secondary">
-                                        Points
-                                    </div>
-                                </div>
-
-                                <div className="card text-center mt-2">
-                                    <div className="card-header">
-                                        Score
-                                    </div>
-                                    <div className="card-body">
-                                        <h5 className="card-title">5</h5>
-                                    </div>
-                                    <div className="card-footer text-body-secondary">
-                                        {questions.length - currentQuestion - 1} more
+                                        <span className='text-primary'>Ques</span> - <span className='text-danger'>{questions.length - currentQuestion - 1} more</span>
                                     </div>
                                 </div>
                             </div>
@@ -112,15 +101,9 @@ function Gamedeck ({ timing }) {
                     </div>
                 </div>
             )}
-            
-            
-            
-
 
         </div>
-
         
-
     );
 }
 
