@@ -51,23 +51,25 @@ function QuizerApp () {
                         </div>
                     ) : (
                         <div>
-                            {/* <h3 className="text-center my-2">Lets Go!</h3> */}
+                            {/* Badge &  Questions */}
                             <Badge bg='danger' pill>{currentQuestion +1}/{questions.length}</Badge>
                             <p className="text-center mt-2">{questions[currentQuestion].question}</p>
+                            
+                            {/* Options  */}
                             <div className="btn-group row mx-2" role="group" aria-label="Basic outlined example">
-        
-                            {questions[currentQuestion].options.map((option) =>(
-                            <button
-                                className="btn btn-outline-danger col-sm-3"
-                                key = {option}
-                                onClick={() => handleAnswerOptionClick(option)}
-                            >
-                                {option}
-                            </button>
-                        ) )}
-                    </div>
-                    <hr/>
-                    <h3 className="text-center text-secondary">Apostle ______?</h3>
+                                {questions[currentQuestion].options.map((option) =>(
+                                <button
+                                    className="btn btn-outline-danger col-sm-3"
+                                    key = {option}
+                                    onClick={() => handleAnswerOptionClick(option)}
+                                >
+                                    {option}
+                                </button>
+                                ))}
+                            </div>
+                            
+                            <hr/>
+                            <h3 className="text-center text-secondary">Apostle ______?</h3>
                         </div>
                     )
                 }

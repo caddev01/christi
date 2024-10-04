@@ -63,4 +63,12 @@ Scope{
     *Backend*
     Hosting
     CyberSecurity
+    *Testing*
+}
+
+Backend{
+    Login, Sign out, Register
+    Database
+    CRUD
+    BOARD
 }

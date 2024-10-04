@@ -73,7 +73,7 @@ const Gamedeck = () => {
                             </div>
                         </div>
 
-                        <div className='mt-1'><BottomCanvas /></div>                      
+                        {/* <div className='mt-1'><BottomCanvas /></div> */}
 
                     </div>
                 </div>
