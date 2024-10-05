@@ -34,20 +34,30 @@ function Gamedeck () {
         setScore(0); setShowScore(false); setShowText(false); setCurrentQuestion(0); setStartQuizer(false);
     }
 
-    // function BottomCanvas() {
-        const [show, setShow] = useState(false);
-      
-        const handleClose = () => setShow(false);
-        const handleShow = () => setShow(true);
-
-    // }
+    const [show, setShow] = useState(false);
     
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     return(
 
         <div>
             {/* Start Quizer */}
             {startQuizer ? (
-                /* Question deck */
+                <div>
+                    {showScore ? (
+                        <div className="container border border-secondary rounded mx-auto mt-5 h-100 mb-5 text-center" style={{width:'70%'}}>
+                            <div className='score-section'>
+                                <p className='mt-1'><i>A {score} in {questions.length} score for you saint</i></p>
+                                {showText && <h4>Agalio! Perfect score!</h4>}
+                                <div class="btn-group mb-2" role="group" aria-label="Basic mixed styles example">
+                                    <button type="button" class="btn btn-danger" onClick={()=>handleRestartQuizer()}>Again</button>
+                                    <button type="button" class="btn btn-success">Next</button>
+                                </div>
+                            </div>
+                        </div>
+                    ) : (
+                        // Question deck
                 <div className="container border border-secondary rounded mx-auto mt-5 h-100 mb-5" style={{width:'70%'}}>
                 <div className='row'>
                     {/* Question Card */}
@@ -55,13 +65,13 @@ function Gamedeck () {
                         <div className="card mb-3 mt-2" style={{maxWidth: '700px'}}>
                             <div className="row g-0">
                                 <div className="col-md-7">
-                                <img src="https://i.pinimg.com/564x/9b/3e/76/9b3e76280ec462ea5bc10037e1e23d3c.jpg" className="img-fluid rounded-start" alt="..." />
+                                    <img src="https://i.pinimg.com/564x/9b/3e/76/9b3e76280ec462ea5bc10037e1e23d3c.jpg" className="img-fluid rounded-start" alt="..." />
                                 </div>
                                 <div className="col-md-5">
-                                <div className="card-body">
-                                    <h5 className="card-title">{questions[currentQuestion].title}</h5>
-                                    <p className="card-text">{questions[currentQuestion].question}</p>
-                                </div>
+                                    <div className="card-body">
+                                        <h5 className="card-title">{questions[currentQuestion].title}</h5>
+                                        <p className="card-text">{questions[currentQuestion].question}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -69,57 +79,63 @@ function Gamedeck () {
 
                     {/* Response elements */}
                     <div className='col-md-4 d-flex align-items-center justify-content-sm-center'>
-                        <div className='d-flex mb-3 justify-content-center align-items-center vstack'>
+                    <div className='d-flex mb-3 justify-content-center align-items-center vstack'>
 
-                            {/* Timer */}
-                            <div className='card-group' style={{minWidth:'170px'}}>
-                                <div className="card text-center mt-2">
-                                    <div className="card-header">
-                                        <span className='text-primary'>Timer</span> - <span className='text-danger'>Score</span>
-                                    </div>
-                                    <div className="card-body">
-                                        <h5 className="card-title"><Countdown /></h5>
-                                    </div>
-                                    <div className="card-footer text-body-secondary">
-                                        <span className='text-primary'>Ques</span> - <span className='text-danger'>{questions.length - currentQuestion - 1} more</span>
-                                    </div>
+                        {/* Timer */}
+                        <div className='card-group' style={{minWidth:'170px'}}>
+                            <div className="card text-center mt-2">
+                                <div className="card-header">
+                                    <span className='text-primary'>Timer</span> - <span className='text-danger'>Score</span>
+                                </div>
+                                <div className="card-body">
+                                    <h5 className="card-title"><Countdown /></h5>
+                                </div>
+                                <div className="card-footer text-body-secondary">
+                                    <span className='text-primary'>Ques</span> - <span className='text-danger'>{questions.length - currentQuestion - 1} more</span>
                                 </div>
                             </div>
-
-                            {/* Options */}
-                            {/* Bottom Canvas */}
-                            <div className='mt-1'>
-                                <Button variant="primary" onClick={() => handleShow()}>
-                                    Attempt
-                                </Button>
-
-                                <Offcanvas show={show} onHide={handleClose} placement='bottom' className='text-bg-dark'>
-                                    <Offcanvas.Body>
-                                        {/* Insert Answer Carousel */}
-                                        <Carousel controls={false} indicators={false}>  
-                                            <Carousel.Item interval={1000}>
-                                                {/* First Slide */}
-                                                <img 
-                                                    className='d-block mx-auto'
-                                                    src='https://images.unsplash.com/photo-1595280102482-65d3cf5c1253?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8a25pZ2h0fGVufDB8fDB8fHww'
-                                                    alt='first slide'
-                                                    style={{width: "300px", height: "180px"}}
-                                                />
-                                                <Carousel.Caption>
-                                                {/* <h3>First slide label</h3> */}
-                                                <p>Pharoah to the Nile</p>
-                                                </Carousel.Caption>
-                                            </Carousel.Item>
-                                        </Carousel>
-                                    </Offcanvas.Body>
-                                </Offcanvas>
-                            </div>                      
-
                         </div>
+
+                        {/* Options */}
+                        {/* Bottom Canvas */}
+                        <div className='mt-1'>
+                            <Button variant="primary" onClick={() => handleShow()}>
+                                Attempt
+                            </Button>
+
+                            <Offcanvas show={show} onHide={handleClose} placement='bottom' className='text-bg-dark'>
+                                <Offcanvas.Body>
+                                    {/* Insert Answer Carousel */}
+                                    <Carousel controls={false} indicators={false}>  
+                                        {questions[currentQuestion].imageOption.map((imageOption) =>(
+                                        <Carousel.Item interval={1000}>
+                                            {/* First Slide */}
+                                            <img 
+                                                className='d-block mx-auto'
+                                                key={imageOption}
+                                                src= {imageOption}
+                                                onClick={() => handleAnswerOptionClick(imageOption)}
+                                                alt='first slide'
+                                                style={{width: "300px", height: "180px"}}
+                                            />
+                                            <Carousel.Caption>
+                                            {/* <h3>First slide label</h3> */}
+                                            <p></p>
+                                            </Carousel.Caption>
+                                        </Carousel.Item>
+                                        ))}
+                                    </Carousel>
+                                </Offcanvas.Body>
+                            </Offcanvas>
+                        </div>                      
                     </div>
                 </div>
-
+            </div>
+        </div>
+                    )}
                 </div>
+                
+                
             ):(
                 <div className='d-flex text-center'>
                     <div className="d-flex row align-items-center justify-contents-center mt-3 mb-2 mx-auto">

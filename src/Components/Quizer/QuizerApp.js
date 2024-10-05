@@ -39,40 +39,40 @@ function QuizerApp () {
 
             {startQuizer ? (
                 <div>
-                {
-                    showScore ? (
-                        <div className='score-section'>
-                            <p className='mt-1'><i>A {score} in {questions.length} score for you saint</i></p>
-                            {showText && <h4>Agalio! Perfect score!</h4>}
-                            <div class="btn-group mb-2" role="group" aria-label="Basic mixed styles example">
-                                <button type="button" class="btn btn-danger" onClick={()=>handleRestartQuizer()}>Again</button>
-                                <button type="button" class="btn btn-success">Next</button>
+                    {
+                        showScore ? (
+                            <div className='score-section'>
+                                <p className='mt-1'><i>A {score} in {questions.length} score for you saint</i></p>
+                                {showText && <h4>Agalio! Perfect score!</h4>}
+                                <div class="btn-group mb-2" role="group" aria-label="Basic mixed styles example">
+                                    <button type="button" class="btn btn-danger" onClick={()=>handleRestartQuizer()}>Again</button>
+                                    <button type="button" class="btn btn-success">Next</button>
+                                </div>
                             </div>
-                        </div>
-                    ) : (
-                        <div>
-                            {/* Badge &  Questions */}
-                            <Badge bg='danger' pill>{currentQuestion +1}/{questions.length}</Badge>
-                            <p className="text-center mt-2">{questions[currentQuestion].question}</p>
-                            
-                            {/* Options  */}
-                            <div className="btn-group row mx-2" role="group" aria-label="Basic outlined example">
-                                {questions[currentQuestion].options.map((option) =>(
-                                <button
-                                    className="btn btn-outline-danger col-sm-3"
-                                    key = {option}
-                                    onClick={() => handleAnswerOptionClick(option)}
-                                >
-                                    {option}
-                                </button>
-                                ))}
+                        ) : (
+                            <div>
+                                {/* Badge &  Questions */}
+                                <Badge bg='danger' pill>{currentQuestion +1}/{questions.length}</Badge>
+                                <p className="text-center mt-2">{questions[currentQuestion].question}</p>
+                                
+                                {/* Options  */}
+                                <div className="btn-group row mx-2" role="group" aria-label="Basic outlined example">
+                                    {questions[currentQuestion].options.map((option) =>(
+                                    <button
+                                        className="btn btn-outline-danger col-sm-3"
+                                        key = {option}
+                                        onClick={() => handleAnswerOptionClick(option)}
+                                    >
+                                        {option}
+                                    </button>
+                                    ))}
+                                </div>
+                                
+                                <hr/>
+                                <h3 className="text-center text-secondary">Apostle ______?</h3>
                             </div>
-                            
-                            <hr/>
-                            <h3 className="text-center text-secondary">Apostle ______?</h3>
-                        </div>
-                    )
-                }
+                        )
+                    }
                 </div>
             ) : (
                 <div>
