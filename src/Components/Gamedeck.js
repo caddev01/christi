@@ -1,18 +1,13 @@
-import { useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import Carousel from 'react-bootstrap/Carousel';
 // import BottomCanvas from '../Components/BottomCanvas';
 import questions from './Quizer/HeroesQuestions';
 import Badge from 'react-bootstrap/Badge';
-import Countier from './CountdownTwo';
 import Countdown from './Countdown';
-import AnswersCarousel from './AnswersCarousel';
-// import Offcanvas from 'react-bootstrap/Offcanvas';
+import Carousel from 'react-bootstrap/Carousel';
 
-// export const QueContext = createContext();
-
-function Gamedeck (handleClose, handleShow, show) {
+function Gamedeck () {
     
     const [score, setScore] = useState(0);
     const [showScore, setShowScore] = useState(false);
@@ -39,15 +34,13 @@ function Gamedeck (handleClose, handleShow, show) {
         setScore(0); setShowScore(false); setShowText(false); setCurrentQuestion(0); setStartQuizer(false);
     }
 
-    // <AnswersCarousel currentQue = {currentQuestion} />
-
-    function BottomCanvas() {
+    // function BottomCanvas() {
         const [show, setShow] = useState(false);
       
         const handleClose = () => setShow(false);
         const handleShow = () => setShow(true);
 
-    }
+    // }
     
     return(
 
@@ -93,35 +86,33 @@ function Gamedeck (handleClose, handleShow, show) {
                                 </div>
                             </div>
 
-                            {/* Answer-Options */}
+                            {/* Options */}
+                            {/* Bottom Canvas */}
                             <div className='mt-1'>
-                                {/* Button Canvas */}
-                                <Button variant="primary" onClick={handleShow}>
+                                <Button variant="primary" onClick={() => handleShow()}>
                                     Attempt
                                 </Button>
 
                                 <Offcanvas show={show} onHide={handleClose} placement='bottom' className='text-bg-dark'>
                                     <Offcanvas.Body>
-                                        {/* Answer Carousel */}
+                                        {/* Insert Answer Carousel */}
                                         <Carousel controls={false} indicators={false}>  
-                                            {/* {questions[currentQuestion].options.map((option) => ( */}
-                                                <Carousel.Item interval={1000}>
-                                                    <img 
+                                            <Carousel.Item interval={1000}>
+                                                {/* First Slide */}
+                                                <img 
                                                     className='d-block mx-auto'
-                                                    // key={option}
                                                     src='https://images.unsplash.com/photo-1595280102482-65d3cf5c1253?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8a25pZ2h0fGVufDB8fDB8fHww'
-                                                    // onClick={() => handleAnswerOptionClick(option)}
                                                     alt='first slide'
                                                     style={{width: "300px", height: "180px"}}
-                                                    />
-                                                    <Carousel.Caption>
-                                                    <p>Pharoah to the Nile</p>
-                                                    </Carousel.Caption>
-                                                </Carousel.Item>
-                                            {/* ) ) } */}
+                                                />
+                                                <Carousel.Caption>
+                                                {/* <h3>First slide label</h3> */}
+                                                <p>Pharoah to the Nile</p>
+                                                </Carousel.Caption>
+                                            </Carousel.Item>
                                         </Carousel>
                                     </Offcanvas.Body>
-                                </Offcanvas> 
+                                </Offcanvas>
                             </div>                      
 
                         </div>
@@ -145,20 +136,10 @@ function Gamedeck (handleClose, handleShow, show) {
                     </div>
                 </div>
             )}
-            {/* <AnswersCarousel currentQuestion = {currentQuestion} /> */}
-            <CurrQuestionComponent currentQue={currentQuestion}  questionChange={handleAnswerOptionClick}> </CurrQuestionComponent>
-            
+
         </div>
         
     );
 }
 
-const CurrQuestionComponent = ({questionChange, currentQue}) => {
-    return(
-        <div>
-        
-        </div>
-    )
-}
-
-export default {Gamedeck, CurrQuestionComponent};
+export default Gamedeck;
