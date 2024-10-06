@@ -19,12 +19,21 @@ function Gamedeck () {
         setStartQuizer(true) && setCurrentQuestion(1);
     };
 
+    const [show, setShow] = useState(false);
+    
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true); 
+
     const handleAnswerOptionClick = (selectedAnswer) => {
         selectedAnswer === questions[currentQuestion].correctAnswer && setScore(score + 1);
         const nextQuestion = currentQuestion + 1;
+        handleClose();
+        console.log(score);
         if (nextQuestion < questions.length){
             setCurrentQuestion(nextQuestion);
         }else{
+            // console.log(mark);
+            // setScore(score * mark);
             setShowScore(true);
             score == questions.length - 1 && setShowText(true);
         }
@@ -33,11 +42,6 @@ function Gamedeck () {
     const handleRestartQuizer = () => {
         setScore(0); setShowScore(false); setShowText(false); setCurrentQuestion(0); setStartQuizer(false);
     }
-
-    const [show, setShow] = useState(false);
-    
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
 
     return(
 
@@ -50,9 +54,9 @@ function Gamedeck () {
                             <div className='score-section'>
                                 <p className='mt-1'><i>A {score} in {questions.length} score for you saint</i></p>
                                 {showText && <h4>Agalio! Perfect score!</h4>}
-                                <div class="btn-group mb-2" role="group" aria-label="Basic mixed styles example">
-                                    <button type="button" class="btn btn-danger" onClick={()=>handleRestartQuizer()}>Again</button>
-                                    <button type="button" class="btn btn-success">Next</button>
+                                <div className="btn-group mb-2" role="group" aria-label="Basic mixed styles example">
+                                    <button type="button" className="btn btn-danger" onClick={()=>handleRestartQuizer()}>Again</button>
+                                    <button type="button" className="btn btn-success">Next</button>
                                 </div>
                             </div>
                         </div>
@@ -139,10 +143,10 @@ function Gamedeck () {
             ):(
                 <div className='d-flex text-center'>
                     <div className="d-flex row align-items-center justify-contents-center mt-3 mb-2 mx-auto">
-                        <div class="flex-shrink-0 col-md">
+                        <div className="flex-shrink-0 col-md">
                             <img src="https://i.pinimg.com/236x/31/40/bb/3140bbe68d99cb693a1fc7a950d9d035.jpg" alt="..." className="img-fluid rounded" />
                         </div>
-                        <div class="flex-grow-1 col-md ms-3">
+                        <div className="flex-grow-1 col-md ms-3">
                             <h2 className='josefin-sans mt-2'>Heroes</h2>
                             <button 
                             className='btn btn-danger josefin-sans'

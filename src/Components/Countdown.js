@@ -2,8 +2,8 @@ import { useState, useRef, useEffect, toString } from "react";
 import Gamedeck from "./Gamedeck";
 
 function Countdown () {
-    const [timing, setTiming] = useState("00:00")
-    const [mark, setMark] = useState("30")
+    const [timing, setTiming] = useState("01:00")
+    const [mark, setMark] = useState("60")
     const [grade, setGrade] = useState("0")
     const Ref = useRef()
     const Refmark = useRef()
@@ -28,7 +28,7 @@ function Countdown () {
     }
 
     function clearTiming (e) {
-        setTiming("00:30")
+        setTiming("01:00")
         if(Ref.current) clearInterval(Ref.current);
         const Id = setInterval(() => {
             startTiming(e)
@@ -37,7 +37,7 @@ function Countdown () {
 
     function getDeadTime(){
         let deadline = new Date();
-        deadline.setSeconds(deadline.getSeconds() + 30);
+        deadline.setSeconds(deadline.getSeconds() + 60);
         return deadline;
     }
 
@@ -50,7 +50,7 @@ function Countdown () {
 
     function startMark (a){
         let {total, second} = getMarkRemaining(a);
-        if(total >= 0){
+        if(second >= 20){
             setMark(
                 (second > 9 ? second : "0" + second)
             )
@@ -58,7 +58,7 @@ function Countdown () {
     }
 
     function clearMark (a) {
-        setTiming("00:30")
+        setTiming("01:00")
         if(Refmark.current) clearInterval(Refmark.current);
         const Id = setInterval(() => {
             startMark(a)
@@ -67,7 +67,7 @@ function Countdown () {
 
     function getDeadMark(){
         let deadmark = new Date();
-        deadmark.setSeconds(deadmark.getSeconds() + 30);
+        deadmark.setSeconds(deadmark.getSeconds() + 60);
         return deadmark;
     }
 
@@ -86,7 +86,10 @@ function Countdown () {
 
     return(
 
-        <div><span className="text-primary">{timing}</span> <span className="text-danger">{mark}</span></div>
+        <div>
+            <span className="text-primary">{timing}</span> <span className="text-danger">{mark}</span>
+            {/* <Gamedeck mark = {mark} /> */}
+        </div>
 
         // <div className="card mx-auto mt-5 text-center" style={{width:"300px"}}>
         //     <h3>Timing</h3>
