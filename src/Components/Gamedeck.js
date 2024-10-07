@@ -7,7 +7,7 @@ import Badge from 'react-bootstrap/Badge';
 import Countdown from './Countdown';
 import Carousel from 'react-bootstrap/Carousel';
 
-function Gamedeck () {
+function Gamedeck ({mark, timing, setMark, setTiming}) {
     
     const [score, setScore] = useState(0);
     const [showScore, setShowScore] = useState(false);
@@ -16,6 +16,7 @@ function Gamedeck () {
     const [startQuizer, setStartQuizer] = useState(false);
 
     const handleStartQuizer = () => {
+        setMark('60'); setTiming('01:00');
         setStartQuizer(true) && setCurrentQuestion(1);
     };
 
@@ -33,14 +34,15 @@ function Gamedeck () {
             setCurrentQuestion(nextQuestion);
         }else{
             // console.log(mark);
-            // setScore(score * mark);
+            setScore(score * mark);
             setShowScore(true);
-            score == questions.length - 1 && setShowText(true);
+            score == (questions.length - 1) * 50 && setShowText(true);
         }
     };
 
     const handleRestartQuizer = () => {
         setScore(0); setShowScore(false); setShowText(false); setCurrentQuestion(0); setStartQuizer(false);
+        setMark('60'); setTiming('01:00');
     }
 
     return(
@@ -52,8 +54,8 @@ function Gamedeck () {
                     {showScore ? (
                         <div className="container border border-secondary rounded mx-auto mt-5 h-100 mb-5 text-center" style={{width:'70%'}}>
                             <div className='score-section'>
-                                <p className='mt-1'><i>A {score} in {questions.length} score for you saint</i></p>
-                                {showText && <h4>Agalio! Perfect score!</h4>}
+                                <p className='mt-1'><i>A {score} in {questions.length * 50} score for you saint</i></p>
+                                {showText && <h4>Agalio! High scorer!</h4>}
                                 <div className="btn-group mb-2" role="group" aria-label="Basic mixed styles example">
                                     <button type="button" className="btn btn-danger" onClick={()=>handleRestartQuizer()}>Again</button>
                                     <button type="button" className="btn btn-success">Next</button>
@@ -92,7 +94,7 @@ function Gamedeck () {
                                     <span className='text-primary'>Timer</span> - <span className='text-danger'>Score</span>
                                 </div>
                                 <div className="card-body">
-                                    <h5 className="card-title"><Countdown /></h5>
+                                    <h5 className="card-title"><span className="text-primary">{timing}</span> <span className="text-danger">{mark}</span></h5>
                                 </div>
                                 <div className="card-footer text-body-secondary">
                                     <span className='text-primary'>Ques</span> - <span className='text-danger'>{questions.length - currentQuestion - 1} more</span>
