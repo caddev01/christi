@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
@@ -7,7 +8,7 @@ import Badge from 'react-bootstrap/Badge';
 import Countdown from './Countdown';
 import Carousel from 'react-bootstrap/Carousel';
 
-function Gamedeck ({mark, timing, setMark, setTiming}) {
+function Gamedeck ({mark, timing}) {
     
     const [score, setScore] = useState(0);
     const [showScore, setShowScore] = useState(false);
@@ -16,7 +17,6 @@ function Gamedeck ({mark, timing, setMark, setTiming}) {
     const [startQuizer, setStartQuizer] = useState(false);
 
     const handleStartQuizer = () => {
-        setMark('60'); setTiming('01:00');
         setStartQuizer(true) && setCurrentQuestion(1);
     };
 
@@ -42,7 +42,6 @@ function Gamedeck ({mark, timing, setMark, setTiming}) {
 
     const handleRestartQuizer = () => {
         setScore(0); setShowScore(false); setShowText(false); setCurrentQuestion(0); setStartQuizer(false);
-        setMark('60'); setTiming('01:00');
     }
 
     return(
@@ -58,6 +57,7 @@ function Gamedeck ({mark, timing, setMark, setTiming}) {
                                 {showText && <h4>Agalio! High scorer!</h4>}
                                 <div className="btn-group mb-2" role="group" aria-label="Basic mixed styles example">
                                     <button type="button" className="btn btn-danger" onClick={()=>handleRestartQuizer()}>Again</button>
+                                    {/* <Link to='/heroes' className='nav-link'>Heroes</Link> */}
                                     <button type="button" className="btn btn-success">Next</button>
                                 </div>
                             </div>

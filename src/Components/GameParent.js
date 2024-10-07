@@ -8,9 +8,10 @@ export default function GameParent () {
 
     return(
         <div>
+            <Gamedeck mark = {mark} timing = {timing}/>
             <Countdown setMark = {setMark} setTiming = {setTiming} />
 
-            <Gamedeck mark = {mark} timing = {timing} setMark = {setMark} setTiming = {setTiming} />
+
         </div>
     );
 
