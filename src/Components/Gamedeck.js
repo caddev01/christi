@@ -8,7 +8,7 @@ import Badge from 'react-bootstrap/Badge';
 import Countdown from './Countdown';
 import Carousel from 'react-bootstrap/Carousel';
 
-function Gamedeck ({mark, timing}) {
+function Gamedeck ({mark, timing, setMark, setTiming }) {
     
     const [score, setScore] = useState(0);
     const [showScore, setShowScore] = useState(false);
@@ -18,6 +18,7 @@ function Gamedeck ({mark, timing}) {
 
     const handleStartQuizer = () => {
         setStartQuizer(true) && setCurrentQuestion(1);
+        <Countdown setMark = {setMark} setTiming = {setTiming} />
     };
 
     const [show, setShow] = useState(false);

@@ -72,3 +72,8 @@ Backend{
     CRUD
     BOARD
 }
+
+Issues{
+    ? Scorer starts count before initiating game
+    ? Scorer doesnt restart when again button is clicked
+}
